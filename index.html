@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Vionis Bio - Agency Packages</title>
+    <meta name="description" content="Optimizing the future of brand expansion with tailored marketing packages.">
+    <style>
+        :root {
+            --emerald-primary: #0FA67C; /* Emerald Green (Metallic) */
+            --emerald-dark: #0A4F3D; /* Deep Emerald Accent */
+            --emerald-light: #3BF3AE; /* Glow Core / Highlight Green */
+--ink: #0B1320;
+            --muted: #5E6B78;
+--bg: url('https://huggingface.co/spaces/adminvionis/emerald-labs-shaping-the-future/resolve/main/images/Vionis-Temp-Vertical-Banner.png') center/cover no-repeat fixed;
+--card: rgba(4, 22, 18, 0.6); /* Glass card background */
+            --line: rgba(59, 243, 174, 0.15); /* Emerald glow lines */
+}
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, system-ui, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: white;
+line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+.container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--panel);
+            border-bottom: 1px solid var(--line);
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
+            z-index: 100;
+            padding: 16px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: clamp(18px, 2vw, 22px);
+            font-weight: 800;
+            color: white;
+text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-link {
+            color: white;
+text-decoration: none;
+            font-weight: 500;
+            transition: color 150ms ease;
+        }
+
+        .nav-link:hover {
+            color: var(--emerald);
+        }
+
+        .nav-cta {
+            background-color: var(--emerald);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 150ms ease;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--emerald-deep);
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: clamp(40px, 5vw, 80px) 0;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hero p {
+            font-size: clamp(16px, 2vw, 18px);
+            color: white;
+max-width: 700px;
+            margin: 0 auto;
+            font-family: 'Lora', serif;
+        }
+/* Packages Grid */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding-bottom: clamp(40px, 5vw, 80px);
+        }
+
+        @media (min-width: 768px) {
+            .packages-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .packages-grid {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+/* What's Included */
+        .included-card {
+            background: var(--card);
+            border-radius: 24px;
+            border: 1px solid var(--line);
+            backdrop-filter: blur(10px);
+padding: 32px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        }
+.included-card h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: white;
+}
+
+        .included-section {
+            margin-bottom: 28px;
+        }
+
+        .included-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--emerald-deep);
+        }
+
+        .included-list {
+            list-style: none;
+        }
+
+        .included-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: var(--muted);
+        }
+
+        .included-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--emerald);
+            font-weight: 600;
+        }
+
+        /* Package Cards */
+        .package-card {
+            background: var(--card);
+            border-radius: 24px;
+            border: 1px solid var(--line);
+            backdrop-filter: blur(10px);
+padding: 32px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+        }
+        .package-badge {
+            display: inline-block;
+            background-color: rgba(15, 166, 124, 0.08);
+            color: var(--emerald-primary);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+.package-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: white;
+}
+
+        .package-description {
+            color: var(--muted);
+            margin-bottom: 24px;
+        }
+
+        .service-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .service-option:last-child {
+            border-bottom: none;
+        }
+
+        .service-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .service-name {
+            font-weight: 500;
+        }
+
+        .service-price {
+            color: var(--emerald);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .package-price {
+            margin-top: auto;
+            padding-top: 24px;
+            text-align: center;
+        }
+
+        .price-amount {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            color: white;
+margin-bottom: 4px;
+        }
+
+        .price-period {
+            color: var(--muted);
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+        .btn-primary {
+            display: block;
+            width: 100%;
+            background: linear-gradient(145deg, 
+                rgba(15, 166, 124, 0.30), 
+                rgba(59, 243, 174, 0.9), 
+                rgba(10, 79, 61, 0.6));
+            color: white;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+border: none;
+            border-radius: 12px;
+            padding: 16px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: all 150ms ease;
+            box-shadow: 0 4px 16px rgba(15, 166, 124, 0.25);
+        }
+        .btn-primary:hover {
+            filter: brightness(1.1) contrast(1.2) saturate(1.2);
+            transform: translateY(-1px);
+}
+/* Footer */
+        footer {
+            background: rgba(4, 22, 18, 0.8);
+            border-top: 1px solid var(--line);
+            backdrop-filter: blur(10px);
+padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .footer-link {
+            color: var(--emerald);
+            text-decoration: none;
+        }
+
+        /* Mobile Sticky CTA */
+        .mobile-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--panel);
+            padding: 16px 24px;
+            border-top: 1px solid var(--line);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+            display: none;
+            z-index: 90;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-cta {
+                display: block;
+            }
+        }
+
+        /* Focus styles */
+        :focus-visible {
+            outline: 2px solid rgba(15, 166, 124, 0.65);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo" style="display: flex; align-items: center; gap: 12px;">
+                <img src="https://huggingface.co/spaces/adminvionis/emerald-labs-shaping-the-future/resolve/main/images/Vionis%20Bio%20Temp%20Logo.png" alt="Vionis Bio Logo" style="height: 40px;">
+                <span style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.5rem; background: linear-gradient(145deg, #0A4F3D, #0FA67C, #0A4F3D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 12px rgba(10, 79, 61, 0.7); letter-spacing: 0.05em;">Vionis Bio</span>
+</a>
+<div class="nav-links">
+                <a href="#" class="nav-link">Services</a>
+                <a href="#" class="nav-link">Results</a>
+                <a href="#" class="nav-link">Packages</a>
+                <a href="#" class="nav-link">Process</a>
+                <a href="#" class="nav-link">Contact</a>
+                </div>
+<a href="#" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>AGENCY PACKAGES</h1>
+                <p>Optimizing the future of brand expansion with tailored marketing solutions</p>
+</div>
+        </section>
+
+        <section class="container">
+            <div class="packages-grid">
+                <div class="package-card">
+                    <span class="package-badge">All Packages</span>
+                    <h2 class="package-title">What's Included</h2>
+                    <p class="package-description">Core services and features across all our packages</p>
+                    
+                    <div class="included-section">
+                        <h3>Core Services</h3>
+<ul class="included-list">
+                            <li>Full-funnel strategy & creative direction</li>
+                            <li>Audience building & optimization</li>
+                            <li>Campaign setup & management</li>
+                            <li>Weekly performance reviews</li>
+                            <li>Scaling strategy</li>
+                            <li>Reporting dashboards & insights</li>
+                            <li>A/B testing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="included-section">
+                        <h3>Creatives</h3>
+                        <ul class="included-list">
+                            <li>Strategy & concepts</li>
+                            <li>Ad copy & messaging</li>
+                            <li>Visual assets & templates</li>
+                            <li>Ready-to-use ad creatives</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="included-section">
+                        <h3>Email & SMS</h3>
+                        <ul class="included-list">
+                            <li>Flows & campaigns</li>
+                            <li>Segmentation</li>
+                            <li>Deliverability checks</li>
+                            <li>Performance dashboards</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <span class="package-badge">Starter</span>
+                    <h2 class="package-title">Starter Package</h2>
+                    <p class="package-description">Best for startups or lean brands testing paid social.</p>
+<div class="service-option">
+                        <div class="service-label">
+                            <input type="radio" name="starter-service" id="starter-ads" checked>
+                            <label for="starter-ads" class="service-name">Ads</label>
+                        </div>
+                        <span class="service-price">Included</span>
+                    </div>
+                    
+                    <div class="service-option">
+                        <div class="service-label">
+                            <input type="radio" name="starter-service" id="starter-creatives">
+                            <label for="starter-creatives" class="service-name">Creatives</label>
+                        </div>
+                        <span class="service-price">+$1,000/mo</span>
+                    </div>
+                    
+                    <div class="service-option">
+                        <div class="service-label">
+                            <input type="radio" name="starter-service" id="starter-email">
+                            <label for="starter-email" class="service-name">Email & SMS</label>
+                        </div>
+                        <span class="service-price">+$1,500/mo</span>
+                    </div>
+                    
+                    <div class="package-price">
+                        <div class="price-amount">$5,000</div>
+                        <div class="price-period">/month</div>
+                        <a href="#" class="btn-primary">Get Started</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <span class="package-badge">Growth</span>
+                    <h2 class="package-title">Growth Package</h2>
+                    <p class="package-description">For brands scaling their campaigns and creative systems.</p>
+<div class="service-option">
+                        <div class="service-label">
+                            <input type="radio" name="growth-service" id="growth-ads" checked>
+                            <label for="growth-ads" class="service-name">Ads</label>
+                        </div>
+                        <span class="service-price">Included</span>
+                    </div>
+                    
+                    <div class="service-option">
+                        <div class="service-label">
+                            <input type="radio" name="growth-service" id="growth-creatives">
+                            <label for="growth-creatives" class="service-name">Creatives</label>
+                        </div>
+                        <span class="service-price">+$1,500/mo</span>
+                    </div>
+                    
+                    <div class="service-option">
+                        <div class="service-label">
+                            <input type="radio" name="growth-service" id="growth-email">
+                            <label for="growth-email" class="service-name">Email & SMS</label>
+                        </div>
+                        <span class="service-price">+$2,000/mo</span>
+                    </div>
+                    
+                    <div class="package-price">
+                        <div class="price-amount">$7,000</div>
+                        <div class="price-period">/month</div>
+                        <a href="#" class="btn-primary">Get Started</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <span class="package-badge">Enterprise</span>
+                    <h2 class="package-title">Enterprise Package</h2>
+                    <p class="package-description">Custom growth architecture for advanced brands.</p>
+<div class="service-option">
+                        <div class="service-label">
+                            <input type="radio" name="enterprise-service" id="enterprise-ads" checked>
+                            <label for="enterprise-ads" class="service-name">Ads</label>
+                        </div>
+                        <span class="service-price">Included</span>
+                    </div>
+                    
+                    <div class="service-option">
+                        <div class="service-label">
+                            <input type="radio" name="enterprise-service" id="enterprise-creatives">
+                            <label for="enterprise-creatives" class="service-name">Creatives</label>
+                        </div>
+                        <span class="service-price">Custom</span>
+                    </div>
+                    
+                    <div class="service-option">
+                        <div class="service-label">
+                            <input type="radio" name="enterprise-service" id="enterprise-email">
+                            <label for="enterprise-email" class="service-name">Email & SMS</label>
+                        </div>
+                        <span class="service-price">Custom</span>
+                    </div>
+                    
+                    <div class="package-price">
+                        <div class="price-amount">Custom</div>
+                        <div class="price-period">/month</div>
+                        <a href="#" class="btn-primary">Contact Us</a>
+</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                © <script>document.write(new Date().getFullYear())</script> Vionis Bio. All rights reserved. 
+                <a href="mailto:hello@vionisbio.com" class="footer-link">hello@vionisbio.com</a>
+            </div>
+            <img src="https://huggingface.co/spaces/adminvionis/emerald-labs-shaping-the-future/resolve/main/images/Vionis-bio-lanscape-banner.png" alt="Vionis Bio Banner" style="width: 100%; margin-top: 40px; border-radius: 12px;">
+</div>
+    </footer>
+<div class="mobile-cta">
+        <a href="#" class="btn-primary">Get Started</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
